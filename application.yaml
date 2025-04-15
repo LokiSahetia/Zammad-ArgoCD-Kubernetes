@@ -7,15 +7,16 @@ spec:
   project: default
 
   sources:
-    repoURL: https://zammad.github.io/zammad-helm
-    chart: zammad                                   # ✅ The chart name inside the repo
-    targetRevision: 13.0.13                          # ✅ Replace with actual version of the chart
-    helm:
-      valueFiles:           
-      - $values/ZammadValuesFolder/values.yaml
-  - repoURL: 'https://github.com/LokiSahetia/Zammad-ArgoCD-Kubernetes.git'
-    targetRevision: main
-    ref: values
+    - repoURL: https://zammad.github.io/zammad-helm
+      chart: zammad
+      targetRevision: 13.0.13
+      helm:
+        valueFiles:
+          - $values/ZammadValuesFolder/values.yaml
+
+    - repoURL: https://github.com/LokiSahetia/Zammad-ArgoCD-Kubernetes.git
+      targetRevision: main
+      ref: values
 
   destination:
     server: https://kubernetes.default.svc
@@ -27,3 +28,4 @@ spec:
     automated:
       selfHeal: true
       prune: true
+
