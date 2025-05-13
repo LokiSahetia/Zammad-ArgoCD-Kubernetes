@@ -1,3 +1,2 @@
-zammad:
-  env:
-    DUMMY_ENV: "noop-test"
+nginx:
+  replicaCount: 2  
