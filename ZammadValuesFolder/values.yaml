@@ -1,2 +1,3 @@
-nginx:
-  replicaCount: 2  
+zammadConfig:
+  nginx:
+    replicas: 3
